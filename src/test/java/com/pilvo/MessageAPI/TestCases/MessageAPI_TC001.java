@@ -5,6 +5,8 @@ import java.text.DecimalFormat;
 import java.util.HashMap;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
+
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.pilvo.MessageAPI.Pages.Accounts;
@@ -43,7 +45,7 @@ public class MessageAPI_TC001 {
 		System.out.println("Phone number 2:"+hmap.get(1));
 		
 		//Post Test specific data as string and get the uuid after sending msg
-		String message = "{\"src\": \""+hmap.get(0)+"\",\"dst\": \""+hmap.get(1)+"\", \"text\": \"Hi, text from Plivo\"}";
+		String message = "{\"src\": \""+hmap.get(0)+"\",\"dst\": \""+hmap.get(1)+"\", \"text\": \"How U doin?\"}";
 		String msguuid = (new JsonParser()).parse(MessageSMS.sendMessage(auth_id,auth_token,message)).getAsJsonObject().get("message_uuid").getAsJsonArray().getAsString();
 		System.out.println("message uuid :"+msguuid);
 		
@@ -65,13 +67,16 @@ public class MessageAPI_TC001 {
 		pricing_rate = Double.parseDouble(d);
 		
 		//Check the actual price for sending message is equal to expected price for sending msg
+		SoftAssert sf = new SoftAssert();
+		sf.assertEquals(perSMS_Rate, pricing_rate);
+		
 		if(Double.compare(perSMS_Rate, pricing_rate) == 0)
 		{
-			System.out.println("yeah Both rate are equal"+"perSMS_Rate:"+perSMS_Rate+"    pricing_rate:"+pricing_rate);
+			System.out.println("yeah Both rate are equal"+"perSMS_Rate:"+perSMS_Rate+"     ##########    pricing_rate:"+pricing_rate);
 		}
 		else
 		{
-			System.out.println("They are not equal"+"perSMS_Rate:"+perSMS_Rate+"    pricing_rate:"+pricing_rate);
+			System.out.println("They are not equal"+"perSMS_Rate:"+perSMS_Rate+"     ##########     pricing_rate:"+pricing_rate);
 		}
 		
 		//Accounts details after sending message
@@ -82,7 +87,7 @@ public class MessageAPI_TC001 {
 		DecimalFormat df1 = new DecimalFormat("#.#####");
 		String a = df1.format(Actualamtwithsmsprice);
 		Actualamtwithsmsprice = Double.parseDouble(a);
-		System.out.println("Actualamtwithsmsprice : "+cash_creditsaftersms+"+"+perSMS_Rate+" ="+Actualamtwithsmsprice);
+		System.out.println("Actualamtwithsmsprice : "+cash_creditsaftersms+"+"+perSMS_Rate+"= "+Actualamtwithsmsprice);
 		
 		
 		double Expectedamtwithsmsprice =  cash_creditsbeforesms-perSMS_Rate;
@@ -96,12 +101,12 @@ public class MessageAPI_TC001 {
 		if(Double.compare(Actualamtwithsmsprice, cash_creditsbeforesms) == 0)
 		{
 			System.out.println("Yes the amoumt is deducted correctly:");
-			System.out.println("Actual amount present in account after deduction : "+cash_creditsaftersms +"  Expected amount to be left in account after decuction : "+Expectedamtwithsmsprice);
+			System.out.println("Actual amount present in account after deduction : "+cash_creditsaftersms +"     ##########    Expected amount to be left in account after decuction : "+Expectedamtwithsmsprice);
 		}
 		else
 		{
 			System.out.println("The amoumt is not deducted correctly:");
-			System.out.println("Actual amount present in account after deduction : "+cash_creditsaftersms +"  Expected amount to be left in account after decuction : "+Expectedamtwithsmsprice);
+			System.out.println("Actual amount present in account after deduction : "+cash_creditsaftersms +"     ##########    Expected amount to be left in account after decuction : "+Expectedamtwithsmsprice);
 		}
 		
 		

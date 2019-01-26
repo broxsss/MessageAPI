@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="14032" started-at="2019-01-26T22:36:16Z" finished-at="2019-01-26T22:36:30Z">
+  <suite name="Default suite" duration-ms="13610" started-at="2019-01-26T23:38:55Z" finished-at="2019-01-26T23:39:09Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="14032" started-at="2019-01-26T22:36:16Z" finished-at="2019-01-26T22:36:30Z">
+    <test name="Default test" duration-ms="13610" started-at="2019-01-26T23:38:55Z" finished-at="2019-01-26T23:39:09Z">
       <class name="com.pilvo.MessageAPI.TestCases.MessageAPI_TC001">
-        <test-method status="PASS" signature="TC001()[pri:0, instance:com.pilvo.MessageAPI.TestCases.MessageAPI_TC001@3a82f6ef]" name="TC001" duration-ms="14020" started-at="2019-01-27T04:06:16Z" finished-at="2019-01-27T04:06:30Z">
+        <test-method status="PASS" signature="TC001()[pri:0, instance:com.pilvo.MessageAPI.TestCases.MessageAPI_TC001@b97c004]" name="TC001" duration-ms="13598" started-at="2019-01-27T05:08:55Z" finished-at="2019-01-27T05:09:09Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC001 -->
