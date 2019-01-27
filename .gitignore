@@ -25,3 +25,9 @@ testng.iml
 z_build
 .kobalt
 .DS_Store
+test-output/*
+*.js
+*.html
+*.css
+*.png
+*.gif
