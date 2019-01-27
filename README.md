@@ -25,14 +25,5 @@ Here are prerequisite to run the test case;
   b.)  As it's maven project you can define goal for it and then run
        Goto RunConfiguration and there go to maven 
        give "clean test"  in Goal and run
-<dependency>
-			<groupId>org.apache.maven.plugins</groupId>
-			<artifactId>maven-compiler-plugin</artifactId>
-			<version>3.5.1</version>
-		</dependency>
-		<dependency>
-			<groupId>commons-collections</groupId>
-			<artifactId>commons-collections</artifactId>
-			<version>3.2.1</version>
-		</dependency>
+
 
