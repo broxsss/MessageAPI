@@ -4,7 +4,6 @@ import static io.restassured.RestAssured.given;
 
 import java.io.IOException;
 import java.util.Properties;
-
 import com.google.gson.JsonParser;
 import com.pilvo.MessageAPI.component.property;
 
