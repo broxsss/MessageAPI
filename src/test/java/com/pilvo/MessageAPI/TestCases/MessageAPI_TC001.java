@@ -72,11 +72,11 @@ public class MessageAPI_TC001 {
 		
 		if(Double.compare(perSMS_Rate, pricing_rate) == 0)
 		{
-			System.out.println("yeah Both rate are equal"+"perSMS_Rate:"+perSMS_Rate+"     ##########    pricing_rate:"+pricing_rate);
+			System.out.println("yeah Both rate are equal "+"perSMS_Rate: "+perSMS_Rate+"     ##########    pricing_rate:"+pricing_rate);
 		}
 		else
 		{
-			System.out.println("They are not equal"+"perSMS_Rate:"+perSMS_Rate+"     ##########     pricing_rate:"+pricing_rate);
+			System.out.println("They are not equal "+"perSMS_Rate: "+perSMS_Rate+"     ##########     pricing_rate:"+pricing_rate);
 		}
 		
 		//Accounts details after sending message
@@ -87,7 +87,7 @@ public class MessageAPI_TC001 {
 		DecimalFormat df1 = new DecimalFormat("#.#####");
 		String a = df1.format(Actualamtwithsmsprice);
 		Actualamtwithsmsprice = Double.parseDouble(a);
-		System.out.println("Actualamtwithsmsprice : "+cash_creditsaftersms+"+"+perSMS_Rate+"= "+Actualamtwithsmsprice);
+		System.out.println("Actualamtwithsmsprice : "+cash_creditsaftersms+"+"+perSMS_Rate+" = "+Actualamtwithsmsprice);
 		
 		
 		double Expectedamtwithsmsprice =  cash_creditsbeforesms-perSMS_Rate;
